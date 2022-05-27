@@ -1,0 +1,31 @@
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Art Gallery</title>
+    {% endif %}
+    {% block styles %}
+    {% bootstrap_css %}
+    {% endblock styles %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+   
+
+    {% block body %}
+    <h1 class="text-danger text-center">Art Gallery</h1>
+    {% endblock body %}
+
+    {% block scripts %}
+    {% bootstrap_javascript  %}
+    {% endblock scripts %}
+</body>
+</html>

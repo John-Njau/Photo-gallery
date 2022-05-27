@@ -1,0 +1,8 @@
+env/
+.vscode/
+.env
+.idea/
+.pycharm/
+Makefile
+__pycache__/
+*.pyc
