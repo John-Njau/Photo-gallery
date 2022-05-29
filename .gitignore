@@ -6,3 +6,4 @@ env/
 Makefile
 __pycache__/
 *.pyc
+unused.html
