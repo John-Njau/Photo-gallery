@@ -1,7 +1,11 @@
-<div class="container">
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock styles %}<div class="container">
     <nav class="navbar navbar-expand-lg bg-light rounded p-5" aria-label="Eleventh navbar example">
         <div class="container-fluid">
-            <a class="navbar-brand fw-5 text-dark" href="/">PHOTO GALLERY</a>
+            <a class="navbar-brand  fw-5 text-dark" href="/"><span class="fw-1 fs-2">Photo</span> <span
+                    class="fw-3 fs-6">GALLERY</span> </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09"
                 aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -9,26 +13,40 @@
             <div class="collapse navbar-collapse" id="navbarsExample09">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'allphotos' %}">All Photos</a>
+                        <a class="nav-link btn btn-light text-dark" href="{% url 'allphotos' %}">All Photos</a>
                     </li>
                     {% for detail in details %}
                     <li>
-                    <a class="btn btn-light" role="button" href="{% url 'categoryview' categoryId=detail.id %}">{{ detail.name }}</a>
+                        <a class="btn btn-light" role="button"
+                            href="{% url 'categoryview' categoryId=detail.id %}">{{ detail.name }}</a>
                     </li>
                     {% endfor %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown"
-                            aria-expanded="false">Location</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown09">
-                            <li><a class="dropdown-item" href="#">Mombasa</a></li>
-                            <li><a class="dropdown-item" href="#">Kisumu</a></li>
-                            <li><a class="dropdown-item" href="#">Nairobi</a></li>
-                            <li><a class="dropdown-item" href="#">New York</a></li>
+                    <!-- location dropdown -->
+                    <li class="nav-item dropdown text-dark" id="drop-loc">
+                        <a class="nav-link dropdown-toggle btn btn-light text-dark" href="" id="dropdownlocs"
+                            data-bs-toggle="dropdown" aria-expanded="false">Location</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownlocs">
+
+                            {% for location in locations %}
+
+                            <a href="{% url 'locationview' locationId=location.id %}"
+                                class="btn">{{ location.name }}</a> <br>
+
+
+                            {% endfor %}
                         </ul>
                     </li>
+
                 </ul>
-                <form role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <form class="navbar-form" action="{% url 'search_results' %}" role="search">
+                    <div class="input-group border ">
+                        <input class="form-control " type="search" placeholder="Search" aria-label="Search"
+                            name="term">
+                    <div class="input-group-btn bg-dark">
+                        <button class="btn btn-default" type="submit"> <i class="fa fa-search text-light"></i></button>
+
+                    </div>
+                </div>
                 </form>
             </div>
         </div>
