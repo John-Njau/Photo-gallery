@@ -1,0 +1,20 @@
+{% extends "display/base.html" %}
+
+    
+    {% block body %}
+    <h2>Photos in {{category.name}} category</h2>
+    {{msg}}
+
+    <div class="row">
+        <div class="col-md-6 m-2">
+            
+            <img src="{{image.image_file.url}}" class="img-fluid border" alt="">
+            <!-- <button class="btn btn-dark m-2">Details</button> -->
+            <!-- Button trigger modal -->
+            <a href="" role="button" class="btn btn-dark m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Details</a>
+        </div>
+    </div>
+
+
+    {% endblock body%}
