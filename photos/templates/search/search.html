@@ -1,0 +1,27 @@
+{%extends 'display/base.html'%}
+{% block body %}
+<div class="container">
+
+    <div class="row">
+        {% if terms%}
+        <h2>Found {{ terms|length }} items of searched term {{message}}</h2>
+        {% else %}
+        <h2> Found 0 items for the search term {{message}}</h2>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if terms %}
+        {% for term in terms %}
+        <div class="col-sm-6 col-md-3">
+            <h1>{{term.name}}</h1>
+            <a href="{{term.image_file.url}}" class="thumbnail">
+                <img src="{{term.image_file.url}}" class="img-fluid" alt="{{term.name}}">
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>Searched term not found</p>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
