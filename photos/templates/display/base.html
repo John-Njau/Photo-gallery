@@ -2,30 +2,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css
+  " />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;1,300&family=Raleway:ital,wght@0,300;0,500;1,200&display=swap"
+        rel="stylesheet" />
+
     {% if title %}
     <title>{{title}}</title>
     {% else %}
-    <title>Art Gallery</title>
+    <title>Photo Gallery</title>
     {% endif %}
     {% block styles %}
     {% bootstrap_css %}
     {% endblock styles %}
 </head>
+
 <body>
     {% include 'navbar.html' %}
-
-   
-
     {% block body %}
-    <h1 class="text-danger text-center">Art Gallery</h1>
+    <h1 class="text-danger text-center">Photo Gallery</h1>
     {% endblock body %}
 
     {% block scripts %}
     {% bootstrap_javascript  %}
     {% endblock scripts %}
 </body>
+
 </html>
