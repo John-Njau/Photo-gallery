@@ -1,0 +1,25 @@
+body {
+  margin: 40px 0;
+  font-family: "Raleway";
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #BCAAA4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.photos-cont{
+    background-color: blue;
+    display: flex;
+    /* width: 50%; */
+    /* height: 50%; */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: red; */
+    /* flex-direction: row; */
+    /* border: 2px solid rgb(255, 17, 0); */
+    font-family: "Akshar", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    /* font-family: "Poppins", sans-serif; */
+    /* font-family: "Raleway", sans-serif; */
+  }

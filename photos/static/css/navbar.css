@@ -1,0 +1,16 @@
+/* #drop-loc{
+    
+} */
+.collapse>.btn:hover{
+    margin-top: 10px;
+    background-color:yellow
+}
+
+#brand{
+        /* border: 2px solid rgb(255, 17, 0); */
+        font-family: "Akshar", sans-serif;
+        /* font-family: "Montserrat", sans-serif; */
+        /* font-family: "Nunito Sans", sans-serif; */
+        /* font-family: "Poppins", sans-serif; */
+        /* font-family: "Raleway", sans-serif; */
+}
