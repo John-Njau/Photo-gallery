@@ -7,11 +7,6 @@ def home(request):
     locations = Location.objects.all()
     return render(request, 'display/home.html', {'details': details, 'locations': locations})
 
-def navbar(request):
-    details = Category.objects.all()
-    locations = Location.objects.all()
-    return render(request, 'display/navbar.html', {'details': details, 'locations': locations})
-
 def allphotos(request):
     photos = Image.objects.all()
     print(photos)
