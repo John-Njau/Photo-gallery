@@ -16,7 +16,7 @@ class Location(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField(max_length=200)
-    category_image = models.ImageField(upload_to='media/uploads/')
+    category_image = models.ImageField(upload_to='media/category')
     
     class Meta:
         ordering = ('name',)
@@ -30,8 +30,9 @@ class Image(models.Model):
     description = models.TextField(max_length=200)
     image_file = models.FileField(upload_to='media/photos/')
     dated = models.DateTimeField(auto_now_add=True)
-    category = models.ManyToManyField(Category, related_name='images')
+    category = models.ManyToManyField(Category)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    url_link = models.URLField(max_length=200)
     
     class Meta:
         ordering = ('dated',)
