@@ -36,7 +36,7 @@ def locationview(request, locationId):
 def search_results(request):
     if 'term' in request.GET and request.GET["term"]:
         search_term = request.GET.get("term")
-        searched_terms = Image.search_by_name(search_term)
+        searched_terms = Category.search_by_name(search_term)
         message = f"{search_term}"
         return render(request, 'search/search.html',{"message":message,"terms": searched_terms})
     else:
