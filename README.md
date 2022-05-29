@@ -4,6 +4,19 @@ A photo applicaton.
 # Author
  ## John Njau Njoroge
 
+# Table of Contents
+
+- [Description](#description)
+- [Design](#design)
+- [User Stories](#user-stories)
+- [Behaviour Driven Development](#behaviour-development)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation-requirements)
+- [Live Link](#live-link)
+- [Known Bugs](#known-bugs)
+- [License](#license)
+- [Authors Info](#author-Info)
+
 # Description
 This is a python-django application where users can view photos captured in different locations. The photos are grouped in different categories where the user can navigate to any category according to their preference.
 
@@ -30,38 +43,46 @@ Find the <a href="https://www.figma.com/file/hnww5Ti9c59ZhqALOyPXaM/Photo-galler
 - Javascript
 - HTML5
 - Bootstrap
-- Css
+- Css3
 - Postgresql
 
 
 # Requirements
-- This program requires python3.+ (and pip) installed, a guide on how to install python on various platforms can be found here
-- Once python is installed, install the folowing external libraries provided in the requirements.txt file using pip
-Example:
-``pip install -r requirements.txt``
+- This program requires python3.+ (and pip) installed.
+- Once python is installed, install all the dependencies provided in the requirements.txt file using pip
+
+`pip install -r requirements.txt`
 
 
 # Installation and Setup
-To view the app, open the live site link provided below on the README. Here is a run through of how to set up the application:
 
-- Step 1 : Clone this repository using `git clone https://github.com/john-njau/photo-gallery.git, or downloading a ZIP file of the code.
-- Step 2 : The repository, if downloaded as a .zip file will need to be extracted to your preferred location and opened
-- Step 3 : Go to the project root directory and install the virtualenv library using pip an afterwards create a virtual environment. Run the following commands respectively:
-pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-Note that you can exit the virtual environment by running the command deactivate
-- Step 4 : Go to config.py and set the SQLALCHEMY_DATABASE_URI to your own, you may use Postgres or any other SQL databse client.
-- Step 5 : Download the all dependencies in the requirements.txt using pip install -r requirements.txt
-Create a file in your root directory called start.sh and store a generated SECRET key like so export SECRET_KEY="<your-key>"
-On the same file write down the command python3 manage.py server
-- Step 6 : On your terminal, run the following command, chmod a+x start.sh
-You can now launch the application locally by running the command ./start.sh
-Open your preferred browser and view the app by opening the link http://127.0.0.1:8000/.
+To Run this app in your machine, you need to:
 
+- Open Terminal `Ctrl+Alt+T`
+
+- git clone `https://github.com/John-Njau/photo-gallery.git`
+
+- `cd photo-gallery`
+
+- `code . or atom .` based on the text editor you have to open and view the project.
 
 # Live Link
 
-# Author Details
+# Known Bugs
+
+At the time of deployment, there was no bugs identified by the developer,
+If you encounter bugs while running the application, create an issue with your observation and expected output, the developer will look at it.
+
+# License
+
+This project is under the guidelines of [MIT License](https://github.com/John-Njau/My-Portfolio/blob/main/LICENSE).
+
+# Authors Info
+
+Github - [John Njau](https://github.com/john-njau/)
+
+Email - [Johnnjaunjoroge@gmail.com](johnnjaunjoroge@gmail.com)
+
+Linked In - [John Njau](https://www.linkedin.com/mwlite/in/john-njau-868b37213)
 
 
