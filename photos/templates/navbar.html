@@ -4,7 +4,7 @@
 {% endblock styles %}<div class="container">
     <nav class="navbar navbar-expand-lg bg-light rounded p-5" aria-label="Eleventh navbar example">
         <div class="container-fluid">
-            <a class="navbar-brand  fw-5 text-dark" href="/"><span class="fw-1 fs-2">Photo</span> <span
+            <a class="navbar-brand  fw-5 text-dark" id="brand" href="/"><span class="fw-1 fs-2">PHOTO</span> <span
                     class="fw-3 fs-6">GALLERY</span> </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09"
                 aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
                     <li class="nav-item">
                         <a class="nav-link btn btn-light text-dark" href="{% url 'allphotos' %}">All Photos</a>
                     </li>
-                    {% for detail in details %}
+                    {% for detail in details|slice:"0:4" %}
                     <li>
                         <a class="btn btn-light" role="button"
                             href="{% url 'categoryview' categoryId=detail.id %}">{{ detail.name }}</a>
@@ -28,7 +28,6 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownlocs">
 
                             {% for location in locations %}
-
                             <a href="{% url 'locationview' locationId=location.id %}"
                                 class="btn">{{ location.name }}</a> <br>
 

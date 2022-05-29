@@ -7,7 +7,7 @@
 {% endblock styles %}
 {% block body %}
 <section class="container bg-warning">
-    <div class="p-5">
+    <div class="p-3">
         {{block.super}}
     </div>
     <div class="container">
@@ -18,7 +18,9 @@
                     <img src="{{detail.category_image.url}}" class="" width="300px" >
                     <h1>{{ detail.name }}</h1>
                     <p class="content">{{detail.description}}</p>
+                    <div class="text-center">
                     <a class="btn btn-light" role="button" href="{% url 'categoryview' categoryId=detail.id %}">More</a>
+                </div>
                 </div>
             </div>
             {% endfor %}
