@@ -2,14 +2,13 @@
 A photo applicaton.
 
 # Author
- ## John Njau Njoroge
+ # John Njau
 
 # Table of Contents
 
 - [Description](#description)
 - [Design](#design)
 - [User Stories](#user-stories)
-- [Behaviour Driven Development](#behaviour-development)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation-requirements)
 - [Live Link](#live-link)
@@ -27,14 +26,14 @@ Find the <a href="https://www.figma.com/file/hnww5Ti9c59ZhqALOyPXaM/Photo-galler
 
 # User Stories
 
-- User can register and login into the site
-- User can create posts on the site
-- User can comments on the posts
-- User can create a profile
-- User can update their profile
+<strong>As a user one can : </strong>
 
-# Behaviour Driven Development
-| user register && login | Take you to home page | Redirect you to the Homepage | | Create a blog post by filling post form | Write your post it | Your blog is displayed in home page | | User comment on the post | Write your feedback and post it | Your feedback is displayed under the blog post | | |
+- View different photos according to their preference
+- navigate among different categories of photos.
+- Click on a 'Details' button a photo to view more details on that particular photo
+- Search for different categories of photos in the gallery.
+- copy the image url and share it or load in a browser.
+- view photos taken in different locations.
 
 
 # Technologies Used
