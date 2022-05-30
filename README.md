@@ -67,6 +67,7 @@ To Run this app in your machine, you need to:
 - `code . or atom .` based on the text editor you have to open and view the project.
 
 # Live Link
+<a>https://jphoto-gallery.herokuapp.com/</a>
 
 # Known Bugs
 

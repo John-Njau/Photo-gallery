@@ -1,6 +1,6 @@
 function copyUrl(url) {
     function handler(event){
-        event.clipboardData = setData('text/plain', url);
+        event.clipboardData.setData('text/plain', url);
         event.preventDefault();
         document.removeEventListener('copy', handler, true);
     }
