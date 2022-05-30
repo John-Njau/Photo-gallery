@@ -1,16 +1,21 @@
-/* #drop-loc{
-    
-} */
-.collapse>.btn:hover{
-    margin-top: 10px;
-    background-color:yellow
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Koulen&family=Macondo&family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;1,300&family=Raleway:ital,wght@0,300;0,500;1,200&display=swap');
+.hr{
+    background-color:#005792;
+    height:2px;
+    width:100%;
 }
 
 #brand{
-        /* border: 2px solid rgb(255, 17, 0); */
-        font-family: "Akshar", sans-serif;
-        /* font-family: "Montserrat", sans-serif; */
-        /* font-family: "Nunito Sans", sans-serif; */
-        /* font-family: "Poppins", sans-serif; */
-        /* font-family: "Raleway", sans-serif; */
+    color: #005792;
+}
+
+#brand{
+    /* font-family: 'Akshar', sans-serif; */
+    font-family: 'Koulen', cursive;
+    /* font-family: 'Macondo', cursive; */
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Nunito Sans', sans-serif; */
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'Raleway', sans-serif; */
 }
