@@ -1,5 +1,10 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded p-5" aria-label="mynavbar">
+{% load static %}
+{% load bootstrap5 %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock styles %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded py-3 px-5" aria-label="mynavbar" id="navbar-main" >
         <a class="navbar-brand fw-5" id="brand" href="/"><span class="fw-1 fs-2">PHOTO</span> <span
                 class="fw-3 fs-6">GALLERY</span> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09"
@@ -37,11 +42,13 @@
                 <div class="input-group border ">
                     <input class="form-control " type="search" placeholder="Search" aria-label="Search" name="term">
                     <div class="input-group-btn bg-dark">
-                        <button class="btn btn-default" type="submit"> <i class="fa fa-search text-light"></i></button>
+                        <button class="btn btn-default" style="background-color: #005792;" type="submit"> <i class="fa fa-search text-light"></i></button>
 
                     </div>
                 </div>
             </form>
         </div>
     </nav>
-</div>
+    <div class="hr">
+
+    </div>

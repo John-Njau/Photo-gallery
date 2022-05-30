@@ -4,9 +4,10 @@
 {% block styles %}
 {% bootstrap_css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/photos.css' %}">
 {% endblock styles %}
 {% block body %}
-<div class="container bg-warning mt-5">
+<div class="container mt-5">
     <div class="row">
         {% if terms%}
         <h2>Found {{ terms|length }} categories for searched term {{message}}</h2>
@@ -14,7 +15,7 @@
         <h2> Found 0 items for the searched term {{message}}</h2> <br>
         {% endif %}
     </div>
-    <div class="row">
+    <div class="photo-cont">
         {% if terms %}
         {% for term in terms %}
         <div class="col-sm-6 col-md-3">

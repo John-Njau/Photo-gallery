@@ -6,68 +6,68 @@
 <link rel="stylesheet" href="{% static 'css/photos.css' %}">
 {% endblock styles %}
 {% block body %}
-<div class="container bg-warning m-2">
+<div class="container m-2">
     <div class="m-3">
-    {% if category %}
-    <h2>Photos in {{category.name}} category</h2>
-    {{msg}}
-    {% else %}
-    <h2>Photos shot in {{location.name}} </h2>
-    {{msg}}
-    {% endif %}
+        {% if category %}
+        <h2>Photos in {{category.name}} category</h2>
+        {{msg}}
+        {% else %}
+        <h2>Photos shot in {{location.name}} </h2>
+        {{msg}}
+        {% endif %}
+    </div>
 </div>
-    
-        <div class="container">
-        <div class="d-flex flex-wrap">
-            {% if photos %}
-            {% for photo in photos %}
-            <div class="row">
-                <div class="col-md-6 m-2 ">
-                    <img src="{{photo.image_file.url}}" class="img-fluid" alt="" width="500">
-                    <!-- <button class="btn btn-dark m-2">Details</button> -->
-                    <!-- Button trigger modal -->
-                    <a href="" role="button" class="btn btn-light m-2" data-bs-toggle="modal"
-                        data-bs-target="#imageModal{{photo.id}}">
-                        Details</a>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade text-dark" id="imageModal{{photo.id}}" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="#{{photo.name}}"> <strong> {{ photo.name }}</strong></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="{{photo.image_file.url}}" class="img-fluid" >
-                            <p class="fs-4 mt-2" >
+<div class="container">
+    <div class="photo-cont">
+        {% if photos %}
+        {% for photo in photos %}
+        <div class="ind-photo">
+            <img src="{{photo.image_file.url}}" class="img-fluid" alt="">
+            <a href="" role="button" class="btn" data-bs-toggle="modal" id="modal-btn"
+                data-bs-target="#imageModal{{photo.id}}">
+                <p>Details</p>
+            </a>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade text-dark" id="imageModal{{photo.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="#{{photo.name}}"> <strong> {{ photo.name }}</strong>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{photo.image_file.url}}" class="img-fluid">
+                        <p class="fs-4 mt-2">
                             <strong>Description: </strong>
-                            <span class="fw-2" >{{photo.description}}</span>
+                            <span class="fw-2">{{photo.description}}</span>
                         </p>
-                            <p class="toBeCopied mt-2" ><strong>Category: </strong> {{ photo.category }}
+                        <p class="toBeCopied mt-2"><strong>Category: </strong> {{ photo.category }}
                             <br /> {{ photo.location }} <br>
                             {{photo.dated}}
                         </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" value="https://jphoto-gallery.herokuapp.com{{photo.image_file.url}}" onclick="copyUrl(this.value)" class="toCopy btn btn-primary">copy image url</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" value="https://jphoto-gallery.herokuapp.com{{photo.image_file.url}}"
+                            onclick="copyUrl(this.value)" class="toCopy btn btn-primary">copy image url</button>
                     </div>
                 </div>
             </div>
-            <!-- End of modal -->
-            {% endfor %}
-            {% else %}
-            {% if category %}
-            <p>No photos in this category yet</p>
-            {% endif %}
-            {% endif %}
         </div>
+        <!-- End of modal -->
+        {% endfor %}
+        {% else %}
+        {% if category %}
+        <p>No photos in this category yet</p>
+        {% endif %}
+        {% endif %}
     </div>
 </div>
+
 {% endblock body %}
 {% block scripts %}
 {% bootstrap_javascript  %}

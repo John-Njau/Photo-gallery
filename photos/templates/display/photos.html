@@ -7,16 +7,15 @@
 {% endblock styles %}
 {% block body %}
 <h1 class="title text-center">All photos</h1>
-<div class="container bg-warning">
-    <div class="d-flex flex-wrap">
+<div class="container">
+    <div class="photo-cont">
         {% for photo in photos %}
-        <div class="row m-2">
-            <div class="col-md-6 m-2">
-                <img src="{{photo.image_file.url}}" class="img-fluid" alt="" width="500px">
-                <a href="" role="button" class="btn btn-light m-2" data-bs-toggle="modal"
-                    data-bs-target="#imageModal{{photo.id}}">
-                    Details</a>
-            </div>
+        <div class="ind-photo">
+            <img src="{{photo.image_file.url}}" class="img-fluid" alt="">
+            <a href="" role="button" class="btn" data-bs-toggle="modal" id="modal-btn"
+                data-bs-target="#imageModal{{photo.id}}">
+                <p>Details</p>
+            </a>
         </div>
         <!-- Modal -->
         <div class="modal fade text-dark" id="imageModal{{photo.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -25,8 +24,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title text-dark" id="#{{photo.name}}"><strong>
-                                 {{ photo.name }}</strong> </h5> <button type="button" class="btn-close"
-                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                {{ photo.name }}</strong> </h5> <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <img src="{{photo.image_file.url}}" class="img-fluid">
