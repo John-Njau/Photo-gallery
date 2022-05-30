@@ -11,9 +11,9 @@
     <div class="container bg-warning">
         <div class="d-flex flex-wrap">
             {% for photo in photos %}
-            <div class="row p-2 m-1">
-                <div class="col-md-6 p-2 text-center">
-                    <img src="{{photo.image_file.url}}" class="img-fluid" alt="" width="500px">
+            <div class="row m-2">
+                <div class="col-md-6 m-2 text-center">
+                    <img src="{{photo.image_file.url}}" class="img-fluid" id="photo-img" alt="" width="500px">
                     <a href="" role="button" class="btn btn-light m-2" data-bs-toggle="modal"
                         data-bs-target="#imageModal{{photo.id}}">
                         Details</a>
