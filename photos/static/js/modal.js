@@ -14,7 +14,7 @@ function copyUrl(url) {
 //     var copyText = document.querySelector('.toBeCopied');
 //     copyText.focus();
 //     copyText.select();
-  
+
 //     try {
 //       var successful = document.execCommand('copy');
 //       var msg = successful ? 'successful' : 'unsuccessful';
