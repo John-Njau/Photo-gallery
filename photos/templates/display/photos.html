@@ -6,52 +6,52 @@
 <link rel="stylesheet" href="{% static 'css/photos.css' %}">
 {% endblock styles %}
 {% block body %}
-<div class="container-fluid">
-    <h1 class="title text-center">All photos</h1>
-    <div class="container bg-warning">
-        <div class="d-flex flex-wrap">
-            {% for photo in photos %}
-            <div class="row m-2">
-                <div class="col-md-6 m-2 text-center">
-                    <img src="{{photo.image_file.url}}" class="img-fluid" id="photo-img" alt="" width="500px">
-                    <a href="" role="button" class="btn btn-light m-2" data-bs-toggle="modal"
-                        data-bs-target="#imageModal{{photo.id}}">
-                        Details</a>
-                   
-                </div>
+<h1 class="title text-center">All photos</h1>
+<div class="container bg-warning">
+    <div class="d-flex flex-wrap">
+        {% for photo in photos %}
+        <div class="row m-2">
+            <div class="col-md-6 m-2">
+                <img src="{{photo.image_file.url}}" class="img-fluid" alt="" width="500px">
+                <a href="" role="button" class="btn btn-light m-2" data-bs-toggle="modal"
+                    data-bs-target="#imageModal{{photo.id}}">
+                    Details</a>
             </div>
-            <!-- Modal -->
-            <div class="modal fade text-dark" id="imageModal{{photo.id}}" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="#{{photo.name}}"><strong>< {{ photo.name }}</strong></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="{{photo.image_file.url}}" class="img-fluid">
-                            <p class="fs-4 mt-2" >
+        </div>
+        <!-- Modal -->
+        <div class="modal fade text-dark" id="imageModal{{photo.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="#{{photo.name}}"><strong>
+                                 {{ photo.name }}</strong> </h5> <button type="button" class="btn-close"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{photo.image_file.url}}" class="img-fluid">
+                        <p class="fs-4 mt-2">
                             <strong>Description: </strong>
-                            <span class="fw-2" >{{photo.description}}</span>
+                            <span class="fw-2">{{photo.description}}</span>
                         </p>
-                            <p class="toBeCopied mt-2" ><strong>Category: </strong> {{ photo.category }}
+                        <p class="toBeCopied mt-2"><strong>Category: </strong> {{ photo.category }}
                             <br /> {{ photo.location }} <br>
                             {{photo.dated}}
                         </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" value="https://jphoto-gallery.herokuapp.com{{photo.image_file.url}}" onclick="copyUrl(this.url)" class="toCopy btn btn-primary">copy image url</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" value="https://jphoto-gallery.herokuapp.com{{photo.image_file.url}}"
+                            onclick="copyUrl(this.value)" class="toCopy btn btn-primary">copy image url</button>
                     </div>
                 </div>
             </div>
-            <!-- End of modal -->
-            {% endfor %}
         </div>
+        <!-- End of modal -->
+        {% endfor %}
     </div>
 </div>
+
 {% endblock body %}
 {% block scripts %}
 {% bootstrap_javascript  %}
