@@ -1,53 +1,86 @@
 from django.test import TestCase
-from .models import Editor,Article,tags
+from .models import Image, Location, Category
 import datetime as dt
 
 # Create your tests here.
-class EditorTestClass(TestCase):
+class LocationTestClass(TestCase):
     #set up method
     def setUp(self):
-        self.john = Editor(first_name='John', last_name='Njau', email='john@gmail.com')
+        '''
+        This set up method runs before any instance is executed
+        '''
+        self.loc = Location(name='Zambia')
         
     # tesing instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.john,Editor))
+        self.assertTrue(isinstance(self.loc,Location))
         
     #test save method
     def test_save_method(self):
-        self.john.save_editor()
-        editors = Editor.objects.all()
-        self.assertTrue(len(editors)> 0)
+        '''
+        Test to check the save method execution
+        '''
+        self.loc.save_location()
+        locs = Location.objects.all()
+        self.assertTrue(len(locs)> 0)
         
-class ArticleTestClass(TestCase):
+class CategoryTestClass(TestCase):
+    #set up method
     def setUp(self):
-         # Creating a new editor and saving it
-        self.editor = Editor(first_name = 'James', last_name ='Muriuki', email ='james@y.com')
-        self.editor.save_editor()
+        '''
+        This set up method runs before any instance is executed
+        '''
+        self.cat = Category(name='nature', description='blissful, serene, and peaceful', category_image='media/category/nature.jpg')
         
-        # Creating a new tag and saving it
-        self.new_tag = tags(name = 'testing')
-        self.new_tag.save()
+    # tesing instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.cat,Category))
         
-        # Creating a new article and saving it
-        self.new_article = Article(title="Test Article ", post="This is a random test post", editor = self.editor)
-        self.new_article.save()
+    #test save method
+    def test_save_method(self):
+        '''
+        Test to check the save method execution
+        '''
+        self.cat.save_category()
+        categoriess = Category.objects.all()
+        self.assertTrue(len(categoriess)> 0)
         
-        self.new_article.tags.add(self.new_tag)
+        
+class ImageTestClass(TestCase):
+    def setUp(self):
+        ''' 
+        Creating a new location and saving it
+        '''
+        self.loc1 = Location(name = 'Arusha')
+        self.loc1.save_location()
+        
+        ''' Creating a new category instance and saving it '''
+        self.cat1 = Category(name='nature', description='blissful, serene, and peaceful', category_image='media/category/nature.jpg')
+        self.cat1.save_category()
+        
+        ''' Creating a new Image instance '''
+        self.new_image = Image(name="Test image ", description="This is a random test post", location = self.loc1, category = self.cat1, dated='May 29, 2022, 3:51 p.m.')
+        self.new_image.save_image()
+        
         
     def tearDown(self):
-        Editor.objects.all().delete()
-        tags.objects.all().delete()
-        Article.objects.all().delete()
+        '''
+        This tearDown method does clean up after each test case has run.
+        '''
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        Image.objects.all().delete()
         
-    def test_get_news_today(self):
-        today_news = Article.today_news()
-        self.assertTrue(len(today_news) > 0)
+    def test_search_by_name(self):
+        '''
+        To test whether the search functionality is implemented properly
+        '''
+        searched = Image.search_by_name('Test image')
+        self.assertTrue(len(searched) > 0)
         
-    def test_get_news_by_date(self):
-        test_date = '2017-05-24'
-        date = dt.datetime.strptime(test_date,'%Y-%m-%d').date()
-        news_by_date = Article.days_news(date)
-        self.assertTrue(len(news_by_date) == 0)
+    # def test_filter_by_location(self):
+    #     filtered = Image.filter_by_location('Arusha')
+    #     self.assertTrue(len(filtered) > 0)
                 
         
 #running tests
