@@ -50,7 +50,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
+# ALLOWED_HOSTS = ['*']
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
