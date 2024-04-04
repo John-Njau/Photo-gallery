@@ -6,9 +6,10 @@ Django
 django-bootstrap-v5==1.0.11
 django-heroku==0.3.1
 gunicorn==20.1.0
-Pillow==9.1.1
+Pillow==10.3.0
 psycopg2==2.9.3
 python-decouple==3.6
 soupsieve==2.3.2.post1
-sqlparse==0.4.2
+sqlparse==0.4.4
 whitenoise==6.1.0
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
